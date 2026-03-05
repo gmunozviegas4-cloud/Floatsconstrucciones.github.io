@@ -3,108 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remodelaciones Profesionales | Calidad y Confianza</title>
+    <title>Estudio de Remodelaciones | Calidad Superior</title>
+    <!-- Fuentes Pro -->
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    <!-- Animaciones -->
+    <link href="https://unpkg.com" rel="stylesheet">
     <style>
-        :root { --accent: #ffc107; --dark: #1a1a1a; }
-        body { font-family: 'Montserrat', sans-serif; background-color: #f4f4f4; }
-        
-        /* Efecto Hero con Zoom */
+        :root { --gold: #c5a059; --dark: #121212; --light: #ffffff; }
+        body { font-family: 'Inter', sans-serif; background-color: var(--light); color: var(--dark); overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; }
+
+        /* Navbar Minimalista */
+        .navbar { background: rgba(255,255,255,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #eee; }
+
+        /* Hero Section Premium */
         .hero { 
-            height: 80vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                         url('https://images.unsplash.com'); 
-            background-size: cover; background-position: center;
-            display: flex; align-items: center; justify-content: center; text-align: center; color: white;
+            background-size: cover; background-position: center; background-attachment: fixed;
+            display: flex; align-items: center; color: white;
         }
 
-        /* Tarjetas con Efecto de Elevación */
+        /* Tarjetas de Servicio de Elite */
         .service-card {
-            background: white; border: none; border-radius: 15px; overflow: hidden;
-            transition: all 0.4s ease; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border: none; border-radius: 0; background: #fff;
+            padding: 40px; transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border-bottom: 3px solid transparent;
         }
         .service-card:hover {
-            transform: translateY(-10px); box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            background: var(--dark); color: white;
+            transform: translateY(-10px); border-bottom: 3px solid var(--gold);
         }
-        .card-img-top { height: 200px; object-fit: cover; }
-        
-        .badge-promo { background: var(--accent); color: var(--dark); font-weight: bold; padding: 5px 15px; border-radius: 20px; }
-        
-        .whatsapp-btn {
-            position: fixed; bottom: 30px; right: 30px; background: #25d366;
-            color: white; width: 60px; height: 60px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center; font-size: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3); z-index: 1000; transition: 0.3s;
+        .service-number { font-size: 3rem; font-weight: 700; color: #eee; margin-bottom: 10px; display: block; }
+        .service-card:hover .service-number { color: var(--gold); }
+
+        /* Botón de Acción */
+        .btn-premium {
+            background: var(--gold); color: white; border-radius: 0;
+            padding: 15px 40px; font-weight: 700; border: 2px solid var(--gold);
+            transition: 0.3s;
         }
-        .whatsapp-btn:hover { transform: scale(1.1); color: white; }
+        .btn-premium:hover { background: transparent; color: var(--gold); }
+
+        .section-padding { padding: 100px 0; }
+        .whatsapp-float { position: fixed; bottom: 40px; right: 40px; z-index: 100; transition: 0.3s; }
+        .whatsapp-float:hover { transform: rotate(15deg) scale(1.1); }
     </style>
 </head>
 <body>
 
-    <header class="hero">
+    <nav class="navbar navbar-expand-lg fixed-top py-3">
         <div class="container">
-            <span class="badge-promo mb-3">CONSTRUCCIÓN & DISEÑO</span>
-            <h1 class="display-2 fw-bold">Transformamos tu hogar con maestría</h1>
-            <p class="fs-4">Soluciones en Herrería, Madera y Remodelaciones con acabados de primera.</p>
-            <a href="#servicios" class="btn btn-warning btn-lg fw-bold px-5 py-3 mt-3">VER TRABAJOS</a>
+            <a class="navbar-brand fw-bold" href="#" style="letter-spacing:3px;">Floats Construcciones S.A</a>
+            <div class="ms-auto">
+                <a href="https://wa.me" class="btn btn-outline-dark btn-sm fw-bold">SOLICITAR CITA</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container" data-aos="fade-right">
+            <h5 class="text-uppercase mb-3" style="color: var(--gold);">Desde la idea hasta la entrega</h5>
+            <h1 class="display-1 fw-bold mb-4">Construcción <br> & Herrería de Autor</h1>
+            <p class="lead mb-5 w-50 d-none d-md-block">Especialistas en transformar espacios residenciales y comerciales con materiales nobles y acabados de precisión técnica.</p>
+            <a href="#servicios" class="btn btn-premium">EXPLORAR SERVICIOS</a>
         </div>
     </header>
 
-    <main id="servicios" class="container py-5">
-        <div class="text-center mb-5">
-            <h2 class="fw-bold">Nuestras Áreas de Especialización</h2>
-            <p class="text-muted">Compromiso, humildad y prolijidad en cada detalle.</p>
-        </div>
+    <section id="servicios" class="section-padding bg-light">
+        <div class="container">
+            <div class="row mb-5" data-aos="fade-up">
+                <div class="col-md-6">
+                    <h2 class="display-4 fw-bold">Nuestra <br>Experticia</h2>
+                </div>
+                <div class="col-md-6 text-muted">
+                    <p>Combinamos técnicas artesanales en herrería y madera con los estándares más modernos de construcción y pintura. Cada proyecto es una pieza única de ingeniería.</p>
+                </div>
+            </div>
 
-        <div class="row g-4">
-            <!-- Herrería -->
-            <div class="col-md-4">
-                <div class="service-card h-100">
-                    <img src="https://images.unsplash.com" class="card-img-top" alt="Herreria">
-                    <div class="card-body text-center">
-                        <h4 class="fw-bold">Herrería de Diseño</h4>
-                        <p class="text-muted">Portones, rejas y estructuras reforzadas que combinan seguridad y estilo.</p>
+            <div class="row g-0">
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="service-card h-100">
+                        <span class="service-number">01</span>
+                        <h4>Herrería Estructural</h4>
+                        <p>Escaleras helicoidales, cerramientos industriales y portones automatizados de alta seguridad.</p>
                     </div>
                 </div>
-            </div>
-            <!-- Madera -->
-            <div class="col-md-4">
-                <div class="service-card h-100">
-                    <img src="https://images.unsplash.com" class="card-img-top" alt="Madera">
-                    <div class="card-body text-center">
-                        <h4 class="fw-bold">Carpintería Fina</h4>
-                        <p class="text-muted">Pérgolas, decks y techos en madera tratada para durar toda la vida.</p>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="service-card h-100">
+                        <span class="service-number">02</span>
+                        <h4>Carpintería de Obra</h4>
+                        <p>Decks en maderas duras, pérgolas de diseño y revestimientos térmicos en madera natural.</p>
                     </div>
                 </div>
-            </div>
-            <!-- Remodelaciones -->
-            <div class="col-md-4">
-                <div class="service-card h-100">
-                    <img src="https://images.unsplash.com" class="card-img-top" alt="Remodelaciones">
-                    <div class="card-body text-center">
-                        <h4 class="fw-bold">Remodelaciones</h4>
-                        <p class="text-muted">Colocaciones, pintura y albañilería. Renovamos tus ambientes por completo.</p>
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="service-card h-100">
+                        <span class="service-number">03</span>
+                        <h4>Remodelación 360°</h4>
+                        <p>Gestión integral: desde la albañilería y colocación de porcelanatos hasta la pintura final.</p>
                     </div>
                 </div>
-            </div>
-        </div>
-    </main>
-
-    <section class="bg-dark text-white py-5">
-        <div class="container text-center">
-            <h3 class="mb-4">"Calidad artesanal al servicio de su hogar"</h3>
-            <p>Solicite su presupuesto sin compromiso. Estamos para asesorarlo.</p>
-            <div class="mt-4">
-                <i class="fab fa-facebook fa-2x mx-3"></i>
-                <i class="fab fa-instagram fa-2x mx-3"></i>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me" class="whatsapp-btn" target="_blank">
-        <i class="fab fa-whatsapp"></i>
+    <footer class="section-padding bg-dark text-white text-center">
+        <div class="container" data-aos="fade-up">
+            <h2 class="mb-5">¿Iniciamos su proyecto?</h2>
+            <p class="mb-4">E-mail: floatsconstrucciones@gmail.com</p>
+            <div class="d-flex justify-content-center gap-4">
+                <small>INSTAGRAM</small> • <small>FACEBOOK</small> • <small>LINKEDIN</small>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me" class="whatsapp-float">
+        <img src="https://upload.wikimedia.org" width="60" alt="WhatsApp">
     </a>
 
+    <!-- Scripts para efectos visuales -->
+    <script src="https://unpkg.com"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
